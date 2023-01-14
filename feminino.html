@@ -1,0 +1,249 @@
+<!Doctype html>
+<html>
+<head> 
+<meta charset="UTF-8"/>
+<link rel="icon" href="imagens/logo.png">
+<title>Roupa&Roupas</title>
+<link rel="stylesheet" type="text/css" href="Estilo.css">
+</head>
+<body>
+<div class="navbar">
+  <a href="index.html" target = "_self"><b><h2>Roupa&Roupas</h2></b></a>
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()"><br><br>Todos
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown">
+    <a href="masculino.html" target = "_self">Masculino</a>
+    <a href="feminino.html" target = "_self">Feminino</a>
+  </div>
+  </div>
+  <a href="sobre.html" target = "_self"><br><br>Sobre</a>
+  <a href="login.html" target = "_self"><br><br>Login</a>
+  <a href="carrinho.html" target = "_self"><br><br><img width="15%" src="imagens/carrinho.png"></a>
+</div>
+<fieldset class="Linha">
+<legend><p><img width="30%" src="imagens/logo.png"></p></legend>
+</fieldset>
+<script>
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+<p align="center">
+<img src="imagens/capa.jpg">
+</p>
+<br>
+<br>
+<br>
+<br>
+<fieldset class="Linha">
+<legend><p><h1>FEMININO<h1></p></legend>
+</fieldset>
+<br>
+<p align="left">
+<input id="searchbar" onkeyup="search_products()" type="text"
+        name="Pesquisar" placeholder="Pesquisar produtos..">
+<img src="imagens/lupa.png" width="50px">
+<br>
+<br>
+<br>
+</p>
+<script>
+function search_products() {
+    let input = document.getElementById('searchbar').value
+    input=input.toLowerCase();
+    let x = document.getElementsByClassName('feminino');
+      
+    for (i = 0; i < x.length; i++) { 
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+            x[i].style.display="none";
+        }
+        else {
+            x[i].style.display="table-cell";                 
+        }
+    }
+}
+</script>
+<br>
+<table width="100%">
+<tr align="center">
+  <td width="33,33%">
+  <div class ="feminino">
+   <div class="card">
+   <img src="imagens/blusa azul.png" style="width:100%">
+   <h1>Camisa</h1>
+   <p class="price">R$30,00
+   <p>Regata azul fresca e confortável para se exercitar</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd8"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Regata feminina azul', document.getElementById('qtd8').value, '30.00', 8)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+   </div>
+  </div>
+  </td>
+  <td width="33,33%">
+ <div class="feminino">
+  <div class="card">
+  <img src="imagens/maiô azul.png" style="width:100%">
+  <h1>Maiô</h1>
+  <p class="price"><s>R$86,00</s> <b>R$77,60</b></p>
+  <p>Lindo maiô de banho azul</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd1"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Maiô de banho azul', document.getElementById('qtd1').value, '77.60', 1)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+  <td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/blusa azul comprida.png" style="width:100%">
+  <h1>Blusa</h1>
+  <p class="price">R$71,90
+  <p>Blusa de manga comprida feminina azul</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd19"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Blusa de frio azul feminina', document.getElementById('qtd19').value, '71.90', 19)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+</tr>
+<tr align="center">
+<td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/saia listrada.png" style="width:100%">
+  <h1>Saia</h1>
+  <p class="price">R$54,99
+  <p>Saia justa listrada estilosa</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd10"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Saia justa listrada', document.getElementById('qtd10').value, '54.99', 10)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+  <td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/saia roxa.png" style="width:100%">
+  <h1>Saia</h1>
+  <p class="price"><s>R$65,00</s> <b>R$43,90</b>
+  <p>Saia longa roxa</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd5"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Saia longa roxa', document.getElementById('qtd5').value, '43.90', 5)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+  <td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/saia rosa.png" style="width:100%">
+  <h1>Saia</h1>
+  <p class="price">R$27,99
+  <p>Saia longa rosa</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd18"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Saia longa rosa', document.getElementById('qtd18').value, '27.99', 18)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+</tr>
+<tr align="center">
+<td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/vestido vermelho.png" style="width:100%">
+  <h1>Vestido</h1>
+  <p class="price">R$44,99
+  <p>vestido vermelho confortável</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd9"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Vestido curto vermelho', document.getElementById('qtd9').value, '44.99', 9)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+  <td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/vestido.png" style="width:100%">
+  <h1>Vestido</h1>
+  <p class="price">R$61,90
+  <p>Vestido curto florido</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd7"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Vestido curto florido', document.getElementById('qtd7').value, '61.90', 7)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+<td width="33,33%">
+ <div class ="feminino">
+  <div class="card">
+  <img src="imagens/casaco marrom.png" style="width:100%">
+   <h1>Jaqueta</h1>
+  <p class="price"> R$105,99
+  <p>Jaqueta de couro marrom super quentinha</p>
+   <p><b>Quantidade:</b> <input type="number" value="1" min="1" max="10" id="qtd12"></p><p><button id="adicionar1" id="produto1" onclick="AddCarrinho('Jaqueta de couro marrom feminina', document.getElementById('qtd12').value, '105.99', 12)">Adicionar ao carrinho</button></p>
+   <div id="snackbar">Item adicionado ao carrinho!</div>
+  </div>
+ </div>
+  </td>
+</tr>
+</table>
+<script>
+	function AddCarrinho(produto, qtd, valor, posicao)
+	{
+		localStorage.setItem("produto" + posicao, produto);
+		localStorage.setItem("qtd" + posicao, qtd);
+		valor = valor * qtd;
+		localStorage.setItem("valor" + posicao, valor);
+		showsnackbar();
+	}
+</script>
+<script>
+function showsnackbar() {
+  var x = document.getElementById("snackbar");
+  x.className = "show";
+  setTimeout(function(){ x.className = x.className.replace("show", ""); }, 3000);
+}
+</script>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</body>
+<footer>
+<br>
+<table width=100%>
+  <tr align="center">
+    <td width="25%">
+    <img src="imagens/frete.png">
+    </td>
+    <td width="25%">
+    <img src="imagens/envio.png">
+    </td>
+    <td width="25%">
+    <img src="imagens/cartao.png">
+    </td>
+    <td width="25%">
+    <img src="imagens/seguro.png">
+    </td>
+  </tr>
+</table>
+<br>
+<br>
+<p align="center"> 
+Este é um site fictício, portanto, nenhum destes itens está realmente à venda. 
+<br>
+Feito por: Bernardo B. Chamilet, Rafaella M. Rodrigues e Yuri J. Silveira.
+</p>
+<br>
+</footer>
+</html>
